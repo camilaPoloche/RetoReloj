@@ -4,21 +4,22 @@
  */
 package autonoma.retos.main;
 
-import autonoma.retos.models.Hora;
-import autonoma.retos.models.Minuto;
-import autonoma.retos.models.Segundo;
+import autonoma.retos.models.Reloj;
 
 /**
- *
+ * Modelo que permite representar la clase prinicipal - main
  * @author Camila
- */
+ * @since 20250513
+ * @version 1.0
+*/
 public class Main {
     public static void main(String[] args) {
-        Thread hora = new Thread(new Hora());
-        Thread minuto = new Thread(new Minuto());
-        Thread segundo = new Thread(new Segundo());
-        hora.start();
-        minuto.start();
-        segundo.start();
+        //Atributos
+        /**
+        * Instancia del hilo Reloj
+        */
+        Thread reloj = new Thread (new Reloj());
+        //Inicializa el hilo
+        reloj.start();
     }
 }
